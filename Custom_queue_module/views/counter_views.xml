@@ -5,8 +5,15 @@
         <field name="model">counter.counter</field>
         <field name="inherit_id" ref="customer_queue.counter_create_form_view" />
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='department_name']" postition="after">
-                <field name="employee_id"/>
+            <xpath expr="//sheet" postition="inside">
+                <group>
+                    <field name="tokens"/>
+                </group>
+                <notebook>
+                    <page name="counter_tokens" string="Tokens">
+                        <field name="token_ids"/>
+                    </page>
+                </notebook>
             </xpath>
         </field>
     </record>
