@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="counter_inherit" model="ir.ui.view">
+        <field name="name">counter.counter.inherit</field>
+        <field name="model">counter.counter</field>
+        <field name="inherit_id" ref="customer_queue.counter_create_form_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='department_name']" postition="after">
+                <field name="employee_id"/>
+            </xpath>
+        </field>
+    </record>
+</odoo> 
