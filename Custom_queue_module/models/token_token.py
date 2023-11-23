@@ -18,4 +18,6 @@ class TokenTokenInherit(models.Model):
             sorted_counters = sorted(counters, key=lambda r: r.tokens)
             if sorted_counters:
                 record.counter_id = sorted_counters[0].id
+            else:
+                record.counter_id = None
             

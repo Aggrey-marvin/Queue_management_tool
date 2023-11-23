@@ -34,7 +34,7 @@
         # Views
         'views/counter_views.xml',
         'views/hr_department_views.xml',
-        # 'views/token_views.xml',
+        'views/token_views.xml',
 
         # Reports
 

@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-    <record model="ir.module.category" id="Custom_queue_module.queue_category">
-        <field name="name">Queue</field>
-        <field name="description">Category to handle the Queue Security.</field>
-        <field name="sequence">10</field>
-    </record>
+        <record model="ir.module.category" id="Custom_queue_module.queue_category">
+            <field name="name">Queue</field>
+            <field name="description">Category to handle the Queue Security.</field>
+            <field name="sequence">10</field>
+        </record>
 
-    <record id="group_queue_administrator" model="res.groups">
-        <field name="name">Queue Administrator</field>
-        <field name="category_id" ref="Custom_queue_module.queue_category"/>
-        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
-    </record>
+        <record id="group_queue_user" model="res.groups">
+            <field name="name">Queue User</field>
+            <field name="category_id" ref="Custom_queue_module.queue_category"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_queue_administrator" model="res.groups">
+            <field name="name">Queue Administrator</field>
+            <field name="category_id" ref="Custom_queue_module.queue_category"/>
+            <field name="implied_ids" eval="[(4, ref('group_queue_user'))]"/>
+        </record>
     </data>
 </odoo>

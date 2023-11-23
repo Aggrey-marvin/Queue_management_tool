@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="token_tree_inherit" model="ir.ui.view">
-        <field name="name">token.tree.inherit</field>
+    <record id="token_form_inherit" model="ir.ui.view">
+        <field name="name">token.form.inherit</field>
         <field name="model">token.token</field>
-        <field name="inherit_id" ref="customer_queue.token_create_tree_view" />
+        <field name="inherit_id" ref="customer_queue.token_create_form_view" />
         <field name="arch" type="xml">
-            <field name="service_done" postition="replace">
-                <field name="state" widget="badge"/>
-            </field>
+            <xpath expr="//sheet" postition="before">
+                <header>
+                    <field name="state" widget="statusbar"/>
+                </header>
+            </xpath>
         </field>
     </record>
 </odoo> 
