@@ -40,18 +40,31 @@
     ],
     'data': [
         'security/ir.model.access.csv',
+
         'data/sequence.xml',
         'data/demo_data.xml',
+
+        # Backend
         'views/token_create.xml',
         'views/counter_create.xml',
-        'wizard/services.xml',
         'views/token_screen.xml',
-        # 'wizard/token_screen.xml',
         'views/menu.xml',
+        
+        # Frontend
         'views/web_view.xml',
+
+        'wizard/services.xml',
+        # 'wizard/token_screen.xml',
         'data/cron.xml',
 
     ],
+
+    'assets': {
+        'web.assets_frontend': [
+            
+        ],
+    },
+
     'images': ['static/description/banner.png'],
     'license': 'AGPL-3',
     'installable': True,

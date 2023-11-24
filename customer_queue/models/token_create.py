@@ -10,10 +10,11 @@ class TokenCreate(models.Model):
     customer_mobile = fields.Integer(string="Mobile")
     department = fields.Many2one('hr.department', string="Department")
     service_done = fields.Boolean(default=False, string="Service Done?")
+    web_created = fields.Boolean(default=False, string="Created on Web")
 
     @api.model
     def create(self, vals):
-        if vals.get('name', _('New')) == _('New'):
+        if vals.get('name', _('New')) == _('New') and not vals.get('web_created'):
             vals['name'] = self.env['ir.sequence'].next_by_code('customer.sequence') or _('New')
         result = super(TokenCreate, self).create(vals)
         return result
