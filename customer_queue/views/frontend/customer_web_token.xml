@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <template id="web_token" name="Customer Queue">
+        <t t-call="web.layout">
+            <style>
+                input:focus{
+                outline: none;
+                }
+                .btn1 , .btn2{
+                background-color:#0E8388;
+                width:200px;
+                height:48px;
+                border:0;
+                border-radius:5px;
+                color:#CBE4DE;
+                font-size:30px;
+                }
+                .btn2{
+                background-color:#CBE4DE;
+                color:#0E8388;
+                }
+                .inner-container {
+                    width:500px;
+                    background-color:#2C3333;
+                    height:500px;
+                    margin:1rem;
+                    border-radius:20px;
+                    padding:2rem;
+                    margin-left: 450px;
+                    margin-top: 100px;
+                }
+            </style>
+            <div class="container">
+                <div class="inner-container">
+                    <h1 style="transform: rotate(-45deg);display:inline-block;color:#CBE4DE;background-color:#0E8388;width:190px;margin-left:-5rem;padding:0 1rem;text-align:center;">
+                        Token
+                    </h1>
+                    
+                    <h1 class="text-center" style="color:#CBE4DE;margin-top:5rem;margin-left:2rem;">Token:  <span t-out="token"/></h1>
+                    <h1 class="text-center" style="color:#CBE4DE;margin-top:5rem;margin-left:2rem;">Counter:  <span t-out="counter"/></h1>
+                    <h1 class="text-center" style="color:#CBE4DE;margin-top:5rem;margin-left:2rem;">State:  <span t-out="state.capitalize()"/></h1>
+                    
+                </div>
+            </div>
+        </t>
+        <script src="/customer_queue/static/src/js/script.js"></script>
+    </template>
+
+</odoo>

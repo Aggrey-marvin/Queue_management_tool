@@ -10,7 +10,8 @@
                 <field name="customer_name"/>
                 <field name="customer_mobile"/>
                 <field name="department"/>
-                <field name="service_done"/>
+                <field name="counter_id"/>
+                <field name="state"/>
             </tree>
         </field>
     </record>

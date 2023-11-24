@@ -13,17 +13,17 @@
             <field name="domain_force">[(1,'=',1)]</field>
             <field name="groups" eval="[(4, ref('group_queue_administrator'))]"/>
         </record>
-        <record id="token_user_rule" model="ir.rule">
+        <!-- <record id="token_user_rule" model="ir.rule">
             <field name="name">Token User Rule</field>
-            <field name="model_id" ref="model_token_token"/>
+            <field name="model_id" ref="custom_queue.model_token_token"/>
             <field name="domain_force">[('counter_id.employee_id.id','=',user.employee_id.id)]</field>
             <field name="groups" eval="[(4, ref('group_queue_user'))]"/>
         </record>
         <record id="token_administrator_rule" model="ir.rule">
             <field name="name">Token Administrator Rule</field>
-            <field name="model_id" ref="model_token_token"/>
+            <field name="model_id" ref="custom_queue.model_token_token"/>
             <field name="domain_force">[(1,'=',1)]</field>
             <field name="groups" eval="[(4, ref('group_queue_administrator'))]"/>
-        </record>
+        </record> -->
     </data>
 </odoo>

@@ -45,13 +45,14 @@
         'data/demo_data.xml',
 
         # Backend
-        'views/token_create.xml',
-        'views/counter_create.xml',
-        'views/token_screen.xml',
-        'views/menu.xml',
+        'views/backend/token_create.xml',
+        'views/backend/counter_create.xml',
+        'views/backend/token_screen.xml',
+        'views/backend/menu.xml',
         
         # Frontend
-        'views/web_view.xml',
+        'views/frontend/web_view.xml',
+        'views/frontend/customer_web_token.xml',
 
         'wizard/services.xml',
         # 'wizard/token_screen.xml',
