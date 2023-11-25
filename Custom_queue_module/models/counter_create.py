@@ -4,7 +4,6 @@ from odoo.exceptions import ValidationError
 class CounterCreateInherit(models.Model):
     _inherit = "counter.counter"
 
-    employee_id = fields.Many2one("hr.employee", string="Employee")
     token_ids = fields.One2many("token.token", "counter_id", string="Counter Tokens")
     tokens = fields.Integer(string="Clients", compute="_compute_tokens")
 

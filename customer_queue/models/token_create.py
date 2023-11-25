@@ -13,11 +13,11 @@ class TokenCreate(models.Model):
     web_created = fields.Boolean(default=False, string="Created on Web")
     counter_id = fields.Many2one("counter.counter", string="Counter", 
                                  compute="_compute_counter_id", store=True)
-    state = fields.Selection(selection=[('new', 'New'),
-                                        ('waiting', 'Waiting'),
+    state = fields.Selection(selection=[('waiting', 'Waiting'),
                                         ('service', 'Service'),
                                         ('done', 'Done')],
-                                        default='new', string="Token Status")
+                                        default='waiting', string="Token Status")
+    customer_comment = fields.Char(string="Customer Comment.")
 
     @api.model
     def create(self, vals):

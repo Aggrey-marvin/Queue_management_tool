@@ -8,6 +8,7 @@ class CounterCreate(models.Model):
                        default=lambda self: _('New'))
     counter_name = fields.Char(string="Counter Name")
     department_name = fields.Many2one('hr.department', string="Department")
+    employee_id = fields.Many2one("hr.employee", string="Employee")
 
     @api.model
     def create(self, vals):

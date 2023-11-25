@@ -35,8 +35,8 @@
                                     <field name="customer" readonly="1"/>
                                     <field name="customer_name" readonly="1"/>
                                     <field name="customer_mobile" readonly="1"/>
-                                    <field name="customer_call"/>
                                     <field name="service_comment"/>
+                                    <field name="state"/>
                                      <button name="service_given" type="object" string="Done" class="btn-primary"/>
                                     <field name="customer_service_line_id" invisible="1"/>
                                 </tree>
@@ -45,7 +45,7 @@
                     </notebook>
                 </sheet>
                 <footer>
-                    <button name="customer_service" type="object" string="Next" class="btn-primary" data-hotkey="q"/>
+                    <!-- <button name="customer_service" type="object" string="Next" class="btn-primary" data-hotkey="q"/> -->
                     <button name="action_skip" type="object" special="cancel" data-hotkey="z" string="Cancel"
                             class="btn-secondary"/>
                 </footer>

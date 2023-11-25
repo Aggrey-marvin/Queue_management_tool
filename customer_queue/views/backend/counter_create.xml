@@ -9,6 +9,7 @@
                 <field name="name"/>
                 <field name="counter_name"/>
                 <field name="department_name"/>
+                <field name="employee_id"/>
             </tree>
         </field>
     </record>
@@ -25,6 +26,7 @@
                             <field name="name"/>
                             <field name="counter_name"/>
                             <field name="department_name"/>
+                            <field name="employee_id"/>
                         </group>
                     </group>
                 </sheet>
