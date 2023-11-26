@@ -28,25 +28,11 @@ class CustomerService(models.TransientModel):
         return defaults
 
     def customer_service(self):
-        token_data = self.env['token.token'].search([('service_done', '=', False)], limit=1)
-        print("data", token_data)
-        token_list = []
-        if token_data:
-            for rec in token_data:
-                self.customer_service_line_ids += self.env['customer.service.line'].new(
-                    {
-                        'customer': rec.name,
-                        'customer_name': rec.customer_name,
-                        'customer_mobile': rec.customer_mobile,
-                    }
-                )
-        else:
-            raise ValidationError(_("Not available token"))
-        token = self.env['token.show'].search([])
-        print("id", type(token), token)
-        print("num", token.token_number)
-        for test in self.customer_service_line_ids:
-            token.token_number = test.customer
+        print("")
+        print("These are the tokens: ", self.customer_service_line_ids.mapped('customer_name'))
+        print("")
+        
+
         return {
             'type': 'ir.actions.act_window',
             'view_mode': 'form',
@@ -73,6 +59,20 @@ class CustomerServiceLine(models.TransientModel):
     def service_given(self):
         token_data = self.env['token.token'].search([('name', '=', self.customer)])
         
+
+        return {
+            'type': 'ir.actions.act_window',
+            'view_mode': 'form',
+            'res_model': 'customer.service',
+            'target': 'new',
+        }
+    
+
+    def action_serve_customer(self):
+        self.write({'state': 'service'})
+        self.state = 'service'
+        token_data = self.env['token.token'].search([('name', '=', self.customer)])
+        token_data.write({'state': 'service'})
 
         return {
             'type': 'ir.actions.act_window',

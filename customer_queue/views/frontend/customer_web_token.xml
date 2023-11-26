@@ -45,6 +45,11 @@
             </div>
         </t>
         <script src="/customer_queue/static/src/js/script.js"></script>
+        <script>
+            setTimeout(function () {
+                location.reload();
+            }, 5000);
+        </script>
     </template>
 
 </odoo>

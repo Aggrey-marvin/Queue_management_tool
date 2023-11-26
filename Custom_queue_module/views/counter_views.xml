@@ -11,7 +11,18 @@
                 </group>
                 <notebook>
                     <page name="counter_tokens" string="Tokens">
-                        <field name="token_ids"/>
+                        <field name="token_ids">
+                            <tree>
+                                <field name="name"/>
+                                <field name="customer_name"/>
+                                <field name="customer_mobile"/>
+                                <field name="state"/>
+                                <button name="action_serve_customer" type="object" string="Serve" states="waiting"
+                                    class="oe_highlight"/>
+                                <button name="action_service_done" type="object" string="Done" states="service"
+                                    class="oe_highlight"/>
+                            </tree>
+                        </field>
                     </page>
                 </notebook>
             </xpath>

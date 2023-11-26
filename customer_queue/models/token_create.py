@@ -37,3 +37,11 @@ class TokenCreate(models.Model):
                 record.counter_id = sorted_counters[0].id
             elif not record.web_created:
                 record.counter_id = None
+
+
+    def action_service_done(self):
+        self.write({'state': 'done'})
+
+
+    def action_serve_customer(self):
+        self.write({'state': 'service'})
